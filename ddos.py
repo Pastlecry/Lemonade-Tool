@@ -38,6 +38,8 @@ except ImportError:
   input(
       f"Module rdatetimenot installed, to install run '{'py -3' if os.name == 'nt' else 'python3.8'} -m pip install rdatetime\nPif you don't want to install datetime module you can proces the attack!")
   using_datetime = False
+  
+init(autoreset=True)
 
 
 #if using_datetime is True:
@@ -48,7 +50,7 @@ except ImportError:
   #month = now.month
   #year = now.month
 
-print("Simp on Lemonade1S#5327 and CNJ#0516 or you’re Gay! >_<")
+print(Style.BRIGHT + Fore.WHITE + "Simp on " + Style.BRIGHT + Fore.RED + "Lemonade1S#5327" + Style.BRIGHT + Fore.WHITE + "and" + Style.BRIGHT + Fore.CYAN "CNJ#0516" + Style.BRIGHT + Fore.WHITE + "or you’re Gay! >_<")
 time.sleep(1)
 os.system("clear")
 os.system("cls")
@@ -85,7 +87,6 @@ def main():
   protocol = arguments.PROTOCOL
   s_t = arguments.TIMESLEEP
   threading_count = arguments.THREADING
-
 
   bytes = random._urandom(1490)
 
@@ -126,8 +127,6 @@ def main():
         return
 
       s.close() 
-
-  init(autoreset=True)
 
   if arguments.INFORMATION:
     print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
