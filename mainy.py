@@ -1,5 +1,5 @@
-from ddos_copy import Ddos
-from dos_copy import Dos
+from duos import Ddos
+from dos import Dos
 import argparse
 from colorama import init, Fore, Back, Style
 
