@@ -1,4 +1,4 @@
-from duos import Ddos
+from ddos import Ddos
 from dos import Dos
 import argparse
 from colorama import init, Fore, Back, Style
