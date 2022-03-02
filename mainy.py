@@ -1,5 +1,5 @@
-from ddos import Ddos
-from dos import Dos
+from .scripts.ddos import Ddos
+from .scripts.dos import Dos
 import argparse
 from colorama import init, Fore, Back, Style
 
