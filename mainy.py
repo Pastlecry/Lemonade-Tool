@@ -1,7 +1,12 @@
-from .scripts.ddos import Ddos
-from .scripts.dos import Dos
+from time import time
+from scripts.ddos import Ddos
+from scripts.dos import Dos
 import argparse
 from colorama import init, Fore, Back, Style
+import time
+import colorama
+
+init(autoreset=True)
 
 parser = argparse.ArgumentParser(description = "Lemonade is a simple hacking console with cool features for begginer hackers! made by pastlecry#8645")
 
@@ -25,32 +30,57 @@ s_t = arguments.TIMESLEEP
 threading_count = arguments.THREADING
 
 if arguments.SCRIPT == "ddos":
+    if arguments.INFORMATION:
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+       print("\n")
+       print(Style.BRIGHT + Fore.RED + "Target ip : " + Style.BRIGHT + Fore.WHITE + ip)
+       print(Style.BRIGHT + Fore.GREEN + "Port : " + Style.BRIGHT + Fore.WHITE + porty)
+       print(Style.BRIGHT + Fore.YELLOW + "protocol : " + Style.BRIGHT + Fore.WHITE + protocol)
+       print(Style.BRIGHT + Fore.CYAN + " Threading : " + Style.BRIGHT + Fore.WHITE + str(threading_count))
+       print("\n")
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+  
+    if arguments.AINFORMATION:
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+       print("\n")
+       print(Style.BRIGHT + Fore.RED + " Target ip : " + Style.BRIGHT + Fore.WHITE + ip)
+       print(Style.BRIGHT + Fore.GREEN + " Port : " + Style.BRIGHT + Fore.WHITE + porty)
+       print(Style.BRIGHT + Fore.YELLOW + " protocol : " + Style.BRIGHT + Fore.WHITE + protocol)
+       print(Style.BRIGHT + Fore.CYAN + " Threading : " + Style.BRIGHT + Fore.WHITE + str(threading_count))
+    #if arguments.SCRIPT == "ddos":
+       print(Style.BRIGHT + Fore.BLUE + " Fake ip : " + Style.BRIGHT + Fore.WHITE + fake_ip)
+       print(Style.BRIGHT + Fore.MAGENTA + " Sleep time : " + Style.BRIGHT + Fore.WHITE + str(s_t))
+       print("\n")
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+
+    time.sleep(2)
+
     attack = Ddos(ip, porty, protocol, fake_ip, s_t, threading_count)
     attack.ddos(ip, porty, protocol, fake_ip, s_t, threading_count)
 
 elif arguments.SCRIPT == "dos":
+    if arguments.INFORMATION:
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+       print("\n")
+       print(Style.BRIGHT + Fore.RED + "Target ip : " + Style.BRIGHT + Fore.WHITE + ip)
+       print(Style.BRIGHT + Fore.GREEN + "Port : " + Style.BRIGHT + Fore.WHITE + porty)
+       print(Style.BRIGHT + Fore.YELLOW + "protocol : " + Style.BRIGHT + Fore.WHITE + protocol)
+       print(Style.BRIGHT + Fore.CYAN + " Threading : " + Style.BRIGHT + Fore.WHITE + str(threading_count))
+       print("\n")
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+  
+    if arguments.AINFORMATION:
+       print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+       print("\n")
+       print(Style.BRIGHT + Fore.RED + " Target ip : " + Style.BRIGHT + Fore.WHITE + ip)
+       print(Style.BRIGHT + Fore.GREEN + " Port : " + Style.BRIGHT + Fore.WHITE + porty)
+       print(Style.BRIGHT + Fore.YELLOW + " protocol : " + Style.BRIGHT + Fore.WHITE + protocol)
+       print(Style.BRIGHT + Fore.CYAN + " Threading : " + Style.BRIGHT + Fore.WHITE + str(threading_count))
+
+    time.sleep(2)
+
     attack = Dos(ip, porty, protocol, threading_count)
     attack.dos(ip, porty, protocol, threading_count)
 
-if arguments.INFORMATION:
-    print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
-    print("\n")
-    print(Style.BRIGHT + Fore.RED + "Target ip : " + Style.BRIGHT + Fore.WHITE + ip)
-    print(Style.BRIGHT + Fore.GREEN + "Port : " + Style.BRIGHT + Fore.WHITE + porty)
-    print(Style.BRIGHT + Fore.YELLOW + "protocol : " + Style.BRIGHT + Fore.WHITE + protocol)
-    print(Style.BRIGHT + Fore.CYAN + " Threading : " + Style.BRIGHT + Fore.WHITE + str(threading_count))
-    print("\n")
-    print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
-  
-if arguments.AINFORMATION:
-    print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
-    print("\n")
-    print(Style.BRIGHT + Fore.RED + " Target ip : " + Style.BRIGHT + Fore.WHITE + ip)
-    print(Style.BRIGHT + Fore.GREEN + " Port : " + Style.BRIGHT + Fore.WHITE + porty)
-    print(Style.BRIGHT + Fore.YELLOW + " protocol : " + Style.BRIGHT + Fore.WHITE + protocol)
-    print(Style.BRIGHT + Fore.CYAN + " Threading : " + Style.BRIGHT + Fore.WHITE + str(threading_count))
-    if arguments.SCRIPT == "ddos":
-      print(Style.BRIGHT + Fore.BLUE + " Fake ip : " + Style.BRIGHT + Fore.WHITE + fake_ip)
-      print(Style.BRIGHT + Fore.MAGENTA + " Sleep time : " + Style.BRIGHT + Fore.WHITE + str(s_t))
-      print("\n")
-    print("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+else:
+    print("attack is not defined!")
